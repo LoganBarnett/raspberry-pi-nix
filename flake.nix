@@ -39,7 +39,7 @@
 
   outputs = srcs@{ self, ... }:
     let
-      pinned = import nixpkgs {
+      pinned = import srcs.nixpkgs {
         system = "aarch64-linux";
         overlays = with self.overlays; [ core libcamera ];
       };
