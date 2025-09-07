@@ -22,7 +22,7 @@
 with lib;
 
 let
-  rootfsImage = pkgs.callPackage "${modulesPath}/../lib/make-ext4-fs.nix" ({
+  rootfsImage = pkgs.callPackage "${modulesPath}/../lib/make-btrfs-fs.nix" ({
     inherit (config.sdImage) storePaths;
     compressImage = true;
     populateImageCommands = config.sdImage.populateRootCommands;

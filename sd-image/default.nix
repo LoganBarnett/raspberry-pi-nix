@@ -14,7 +14,7 @@
       # number. So, we drop the hex prefix and stick on a "02" to
       # refer to the root partition.
       "root=PARTUUID=${lib.strings.removePrefix "0x" config.sdImage.firmwarePartitionID}-02"
-      "rootfstype=ext4"
+      "rootfstype=btrfs"
       "fsck.repair=yes"
       "rootwait"
     ];
